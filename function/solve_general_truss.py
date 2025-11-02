@@ -36,9 +36,9 @@ def solve_general_truss(nodes, bars, supports, external_forces):
     num_reactions = len(reactions)
     num_unknowns = num_bars + num_reactions
     
-    # 2. Xây dựng ma trận A
+    # 2. Xây dựng ma trận A (AS=-F theo như sách thì ở đây triển khai thành AX=-F)
     num_eq = 2 * num_nodes
-    A = np.zeros((num_eq, num_unknowns))
+    A = np.zeros((num_eq, num_unknowns)) # Ma trận hệ số 
     F_ext = np.zeros(num_eq)
     
     # Lặp qua từng nút để xây dựng các hàng của ma trận A
@@ -63,7 +63,8 @@ def solve_general_truss(nodes, bars, supports, external_forces):
             else:
                 continue
                 
-            _, c, s = calculate_bar_properties(n_start, n_end)
+            _, c, s = calculate_bar_properties(n_start, n_end) #Tính toán hệ số hình chiếu
+            # c = cos(θ), s = sin(θ)  
             A[eq_x, j] = c # Thành phần Fx
             A[eq_y, j] = s # Thành phần Fy
 

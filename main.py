@@ -1,11 +1,12 @@
 #.....................................................................
-# Code chương trình giải bài toán hệ giàn 2D tổng quát 
+# Code chương trình giải bài toán hệ giàn 2D
 # 2452391 - Ly Gia Huy
 #.....................................................................
 # thêm các thư viện cần thiết
 import os
 import sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))) # thêm thư mục hiện tại vào Python path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))) # thêm thư mục function hiện tại vào ct
+# Cách thêm khác sys.path.insert(0,'function') #(Tùy vào máy mà sẽ đường dẫn sẽ khác nhau)
 
 import streamlit as st
 import numpy as np
@@ -17,7 +18,7 @@ from function.calculate_bar_properties import calculate_bar_properties
 from function.plot_truss import plot_truss
 def main():
     st.set_page_config(layout="wide")
-    st.title("Chương trình giải Hệ Giàn Phẳng 2D Tương Tác")
+    st.title("Chương trình xác định ứng lực các thanh trong bài toán giàn phẳng")
     st.write("Xây dựng hệ giàn bằng cách thêm Nút, Thanh, Gối tựa và Nội lực tác dụng.")
 
     # --- KHỞI TẠO BIẾN TRẠNG THÁI (SESSION STATE) ---
@@ -30,7 +31,7 @@ def main():
         st.session_state.bar_results = {}
         st.session_state.reaction_results = {}
 
-    # --- THANH BÊN (SIDEBAR) ĐỂ NHẬP LIỆU ---
+    # --- THANH BÊN (SIDEBAR) ĐỂ NHẬP LIỆU --- 
     st.sidebar.title("Thiết lập Hệ Giàn")
 
     # --- Quay lại st.number_input ---
