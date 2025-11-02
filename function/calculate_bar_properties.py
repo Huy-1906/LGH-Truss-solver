@@ -1,3 +1,4 @@
+import numpy as np
 def calculate_bar_properties(node1_coord, node2_coord):
     """Tính chiều dài và góc của một thanh."""
     delta_x = node2_coord[0] - node1_coord[0]

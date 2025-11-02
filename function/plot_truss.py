@@ -1,3 +1,11 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+import streamlit as st
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import numpy as np
+
 def plot_truss(nodes, bars, bar_forces, supports, external_forces, reaction_results):
     """Vẽ hệ giàn một cách tổng quát."""
     

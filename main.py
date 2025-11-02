@@ -3,8 +3,9 @@
 # 2452391 - Ly Gia Huy
 #.....................................................................
 # thêm các thư viện cần thiết
+import os
 import sys
-sys.path.insert(0,'/function') # thêm đường dẫn đến các hàm (Tùy vào máy mà sẽ đường dẫn sẽ khác nhau)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))) # thêm thư mục hiện tại vào Python path
 
 import streamlit as st
 import numpy as np
